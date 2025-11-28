@@ -1,0 +1,111 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Helvetica Neue', sans-serif;
+}
+
+body {
+  background: #1d1c1c;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: white;
+}
+
+.container {
+  text-align: center;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 8px;
+}
+
+header p {
+  font-size: 1.2rem;
+  color: #bfbfbf;
+  margin-bottom: 50px;
+}
+
+.piano {
+  display: flex;
+  position: relative;
+  user-select: none;
+}
+
+.key.white {
+  width: 60px;
+  height: 210px;
+  background: #cfcdcd;
+  color: #939292;
+  border: 2px solid #bfbfbf;
+  border-bottom: 6px solid #a6a6a6;
+  border-radius: 5px;
+  margin: 0 2px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding-bottom: 10px;
+  font-weight: 400;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.1s;
+}
+
+.key.black {
+  width: 40px;
+  height: 120px;
+  background: #181717;
+  color: rgb(152, 145, 145);
+  position: absolute;
+  top: 0;
+  z-index: 2;
+  border-radius: 0 0 5px 5px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding-bottom: 6px;
+  font-weight: 400;
+  font-size: 13px;
+  cursor: pointer;
+  transition: 0.1s;
+  box-shadow: 0 0 15px rgba(0,0,0,0.7);
+}
+
+.keyboard-wrapper {
+  border-radius: 18px;
+  padding: 20px;
+  display: inline-block;
+  background: #252323;      
+  box-shadow: 0 0 35px rgba(0,0,0,0.7);
+}
+
+.key.black[data-key="w"] { left: 2.8rem; }
+.key.black[data-key="e"] { left: 6.8rem; }
+.key.black[data-key="t"] { left: 14.8rem; }
+.key.black[data-key="y"] { left: 18.8rem; }
+.key.black[data-key="u"] { left: 22.8rem; }
+.key.black[data-key="o"] { left: 30.8rem; }
+.key.black[data-key="p"] { left: 34.8rem; }
+
+.key.active {
+  scale: 0.98;
+  transform: translateY(3px);
+}
+
+.key span {
+  opacity: 0;
+  transform: translateX(-15px);
+  transition: 0.25s ease;
+  pointer-events: none;
+}
+
+.key span.show {
+  opacity: 1;
+  transform: translateX(0);
+  color: #968f8f;
+}
+
